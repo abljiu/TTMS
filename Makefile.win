@@ -1,0 +1,79 @@
+# Project: TTMS
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = Common/common.o Common/listTestDrv.o Persistence/EntityKey_Persist.o Persistence/Seat_Persist.o Persistence/Studio_Persist.o Service/Seat.o Service/Studio.o View/Main_Menu.o View/Seat_UI.o View/Studio_UI.o TTMS.o Service/Schedule.o View/Schedule_UI_List.o Persistence/Schedule_Perst_SelAll.o View/Schedule_UI_MgtEntry.o View/Play_UI.o Service/Play.o Persistence/Play_Persist.o
+LINKOBJ  = Common/common.o Common/listTestDrv.o Persistence/EntityKey_Persist.o Persistence/Seat_Persist.o Persistence/Studio_Persist.o Service/Seat.o Service/Studio.o View/Main_Menu.o View/Seat_UI.o View/Studio_UI.o TTMS.o Service/Schedule.o View/Schedule_UI_List.o Persistence/Schedule_Perst_SelAll.o View/Schedule_UI_MgtEntry.o View/Play_UI.o Service/Play.o Persistence/Play_Persist.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = TTMS.exe
+CXXFLAGS = $(CXXINCS) -std=c99 -g3
+CFLAGS   = $(INCS) -std=c99 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Common/common.o: Common/common.c
+	$(CC) -c Common/common.c -o Common/common.o $(CFLAGS)
+
+Common/listTestDrv.o: Common/listTestDrv.c
+	$(CC) -c Common/listTestDrv.c -o Common/listTestDrv.o $(CFLAGS)
+
+Persistence/EntityKey_Persist.o: Persistence/EntityKey_Persist.c
+	$(CC) -c Persistence/EntityKey_Persist.c -o Persistence/EntityKey_Persist.o $(CFLAGS)
+
+Persistence/Seat_Persist.o: Persistence/Seat_Persist.c
+	$(CC) -c Persistence/Seat_Persist.c -o Persistence/Seat_Persist.o $(CFLAGS)
+
+Persistence/Studio_Persist.o: Persistence/Studio_Persist.c
+	$(CC) -c Persistence/Studio_Persist.c -o Persistence/Studio_Persist.o $(CFLAGS)
+
+Service/Seat.o: Service/Seat.c
+	$(CC) -c Service/Seat.c -o Service/Seat.o $(CFLAGS)
+
+Service/Studio.o: Service/Studio.c
+	$(CC) -c Service/Studio.c -o Service/Studio.o $(CFLAGS)
+
+View/Main_Menu.o: View/Main_Menu.c
+	$(CC) -c View/Main_Menu.c -o View/Main_Menu.o $(CFLAGS)
+
+View/Seat_UI.o: View/Seat_UI.c
+	$(CC) -c View/Seat_UI.c -o View/Seat_UI.o $(CFLAGS)
+
+View/Studio_UI.o: View/Studio_UI.c
+	$(CC) -c View/Studio_UI.c -o View/Studio_UI.o $(CFLAGS)
+
+TTMS.o: TTMS.c
+	$(CC) -c TTMS.c -o TTMS.o $(CFLAGS)
+
+Service/Schedule.o: Service/Schedule.c
+	$(CC) -c Service/Schedule.c -o Service/Schedule.o $(CFLAGS)
+
+View/Schedule_UI_List.o: View/Schedule_UI_List.c
+	$(CC) -c View/Schedule_UI_List.c -o View/Schedule_UI_List.o $(CFLAGS)
+
+Persistence/Schedule_Perst_SelAll.o: Persistence/Schedule_Perst_SelAll.c
+	$(CC) -c Persistence/Schedule_Perst_SelAll.c -o Persistence/Schedule_Perst_SelAll.o $(CFLAGS)
+
+View/Schedule_UI_MgtEntry.o: View/Schedule_UI_MgtEntry.c
+	$(CC) -c View/Schedule_UI_MgtEntry.c -o View/Schedule_UI_MgtEntry.o $(CFLAGS)
+
+View/Play_UI.o: View/Play_UI.c
+	$(CC) -c View/Play_UI.c -o View/Play_UI.o $(CFLAGS)
+
+Service/Play.o: Service/Play.c
+	$(CC) -c Service/Play.c -o Service/Play.o $(CFLAGS)
+
+Persistence/Play_Persist.o: Persistence/Play_Persist.c
+	$(CC) -c Persistence/Play_Persist.c -o Persistence/Play_Persist.o $(CFLAGS)
